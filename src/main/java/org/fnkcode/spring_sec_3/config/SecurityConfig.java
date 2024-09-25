@@ -20,7 +20,7 @@ public class SecurityConfig {
         return httpSecurity
                 .addFilterAt(customAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .authorizeHttpRequests((requests)->
-                        requests.anyRequest().authenticated()
+                        requests.anyRequest().permitAll()
                         )
                 .build();
     }
